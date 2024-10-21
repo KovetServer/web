@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pedido</title>
+    <style>
+        .biucador {
+            display: none; 
+        }
+        #image {
+            display: none; 
+        }
+        .yes {
+            margin-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <table class="tabla-reducida">
+            <tr class="fila-titulo"> 
+                <th>Material Info</th>
+                <th>Placement</th>
+                <th>YDS EA</th>
+                <th>Total YDS REQ</th>
+            </tr>
+            <tr class="fila-datos">
+                <td>COM1
+                    Mayer Fabrics
+                    Ephesus
+                    Indigo</td>
+                <td>Inside Back, Inside Arm, Seat Cushion, Inside Arm, Front Apron
+                    (Not Verified by Client)</td>
+                <td>6.25 yards</td>
+                <td>6.75 yards</td>
+            </tr>
+        </table>
+        <div>
+            <div style="position: relative; display: inline-block;">
+                <img src="/assents/position.png" alt="Descripción de la imagen" class="position">
+            </div>
+            <div class="yes" style="position: relative; display: inline-block;">
+                <img id="image" src="https://orders.kovethospitality.com/item_colors/17536/view_image?fabric_id=183659" alt="Descripción de la imagen" class="tela">
+                <input type="text" id="imageUrl" placeholder="URL de la imagen">
+                <a href="https://orders.kovethospitality.com/item_colors/17536/view_image?fabric_id=183659" target="_blank">Abrir imagen</a>
+                <button onclick="updateImage()">Mostrar Imagen</button>
+            </div>
+        </div>
+    </div>
+    <link rel="stylesheet" href="/components/pdf2/pdf2.css">
+    <h3 class="pedido-title"></h3>
+    <div class="pedidoContent" id="pedidoContent-1">
+        <table class="pedidoTable">
+            <tr>
+                <td colspan="3" class="client-small-cell">
+                    <span class="blue-text">CLIENT:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td colspan="3" class="item-small-cell">
+                    <span class="blue-text">ITEM #:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td colspan="2" class="date-small-cell">
+                    <span class="blue-text">DATE:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td colspan="3" rowspan="3" class="vacio-small-cell">
+                    <span class="blue-text"></span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="project-small-cell">
+                    <span class="blue-text">PROJECT:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td colspan="3" rowspan="2">
+                    <span class="blue-text">DESCRIPTION:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td colspan="1" rowspan="2" class="approval-small-cell">
+                    <span class="blue-text">APPROVED:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+            </tr>
+            <tr>
+                <td class="wo-small-cell">
+                    <span class="blue-text">W.O.:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td class="po-small-cell">
+                    <span class="blue-text">P.O.:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+                <td class="qty-small-cell">
+                    <span class="blue-text">QTY.:</span>
+                    <p class="contenido" contenteditable="true"></p>
+                </td>
+            </tr>
+        </table>
+        <input type="file" class="pdfUpload" accept="application/pdf">
+    </div>
+    <button class="savePDFButton">Guardar PDF</button>
+    <script>
+        function updateImage() {
+            const imageUrl = document.getElementById('imageUrl').value;
+            const img = document.getElementById('image');
+
+            if (imageUrl) {
+                img.src = imageUrl; 
+                img.style.display = 'block'; 
+                document.getElementById('imageUrl').value = '';
+                document.getElementById('biucador').style.display = 'none'; 
+            }
+        }
+        function deleteImage(buttonId, imageClass) {
+            const img = document.getElementById('image');
+            img.src = ""; 
+            img.style.display = 'none'; 
+            document.getElementById('imageUrl').value = ''; 
+            document.getElementById(buttonId).style.display = 'none';
+            document.getElementById('biucador').style.display = 'block'; 
+        }
+    </script>
+</body>
+</html>

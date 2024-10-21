@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "name": "Conferencia Anual",
+      "date": "2024-08-15",
+      "location": "Nueva York"
+    },
+    {
+      "id": 2,
+      "name": "Taller de Desarrollo Web",
+      "date": "2024-09-10",
+      "location": "Los Ángeles"
+    },
+    {
+      "id": 3,
+      "name": "Encuentro de Innovadores",
+      "date": "2024-07-20",
+      "location": "San Francisco"
+    }
+  ]

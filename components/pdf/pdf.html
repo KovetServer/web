@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Buscar Orden</title>
+        <link rel="stylesheet" href="/components/pdf/pdf.css">
+        <link href="https://fonts.googleapis.com/css2?family=YourFontName:wght@100&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1>KOVET AND REMEDY</h1>
+        <div class="search-wrapper">   
+            <div class="url-search-container">
+                <label for="orderUrlSearch" class="buscadorUrl">Search by Order URL:</label>
+                <input type="text" id="orderUrlSearch" placeholder="Enter the URL of the order">
+                <button id="searchByUrlButton">Search by URL</button>
+                <div class="custom-search-container">
+                    <label for="itemSearch" class="custom-buscador" style="display: none;">Search by item number:</label>
+                    <input type="text" id="itemSearch" placeholder="Search by item number" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div id="spinner" class="spinner" style="display: none;">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="ordersContainer">
+            <!-- Aquí se generarán las tablas dinámicamente -->
+        </div>
+        <script src="./components/pdf/pdf.js" type="module"></script>
+    </body>
+</html>

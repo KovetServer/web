@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bodyBackground: #121212;
+    --containerBackground: #0b1d15;
+    --textColor: #ecf0f1;
+    --highlightBackground: linear-gradient(135deg, #000000, #333333);
+    --ledGlowColor: rgba(255, 255, 255, 0.5);
+    --glow-color: rgb(255, 255, 255);
+    --glow-spread-color: rgba(255, 255, 255, 0.781);
+    --enhanced-glow-color: rgba(255, 255, 255, 0.7);
+    --btn-color: rgb(0, 0, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bodyBackground);
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.title-container {
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.title-container h1 {
+    font-size: 60px;
+    background: var(--highlightBackground);
+    -webkit-background-clip: text;
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.comment-button {
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 1em var(--glow-spread-color),
+                inset 0 0 .75em .2em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+    text-decoration: none;
+    margin-top: 100px;
+    display: inline-block;
+}
+
+.comment-button::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.comment-button:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+                0 0 4em 2em var(--glow-spread-color),
+                inset 0 0 .75em .25em var(--glow-color);
+}
+
+.comment-button:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+                0 0 2.5em 2em var(--glow-spread-color),
+                inset 0 0 .5em .25em var(--glow-color);
+}
+
+/* Responsiveness */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .title-container h1 {
+        font-size: 48px;
+        padding: 8px 16px;
+    }
+    
+    .comment-button {
+        padding: 0.8em 2em;
+        font-size: 14px;
+    }
+}
+
+/* Smartphones in landscape mode */
+@media (max-width: 768px) {
+    .title-container h1 {
+        font-size: 36px;
+        padding: 6px 12px;
+    }
+    
+    .comment-button {
+        padding: 0.7em 1.5em;
+        font-size: 13px;
+        margin-top: 60px;
+    }
+}
+
+/* Smartphones in portrait mode */
+@media (max-width: 480px) {
+    .title-container h1 {
+        font-size: 28px;
+        padding: 5px 10px;
+    }
+    
+    .comment-button {
+        padding: 0.6em 1.2em;
+        font-size: 12px;
+        margin-top: 40px;
+    }
+}

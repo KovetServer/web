@@ -1,0 +1,595 @@
+/* Contenedor de los dos buscadores, alineados horizontalmente */
+.search-wrapper {
+    display: flex;
+    justify-content:center;
+    width: 600px; 
+    margin-left: 600px;
+}
+
+.search-container, .url-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; 
+}
+
+.buscador, .buscadorUrl {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #fff; 
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ccc; 
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Input de los buscadores */
+#orderSearch, #orderUrlSearch {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #fff; 
+    background-color: transparent;
+    color: #ffffff;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 10px #fff, 0 0 20px #ccc; 
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#orderSearch:focus, #orderUrlSearch:focus {
+    box-shadow: 0 0 20px #fff, 0 0 30px #ccc; 
+}
+
+/* Botones de búsqueda */
+#searchButton, #searchByUrlButton {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #fff; 
+    background-color: transparent;
+    border: 2px solid #fff; 
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px #fff, 0 0 30px #ccc; 
+    text-shadow: 0 0 5px #fff; 
+}
+
+#searchButton:hover, #searchByUrlButton:hover {
+    background-color: #fff; 
+    color: #0d0d0d; 
+    box-shadow: 0 0 20px #fff, 0 0 40px #ccc; 
+    transform: scale(1.05);
+}
+
+/* Contenedor de los dos buscadores, alineados horizontalmente */
+.custom-search-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 600px; 
+    margin-left: 500px;
+
+}
+
+/* Contenedores individuales para cada buscador */
+.custom-search-container, .custom-url-search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; 
+}
+
+/* Etiquetas de los buscadores */
+.custom-buscador, .custom-buscadorUrl {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFFFFF; 
+    text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #CCCCCC;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Input de los buscadores */
+#orderUrlSearch, #itemSearch {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #FFFFFF; 
+    background-color: transparent;
+    color: #ffffff;
+    width: 200px;
+    text-align: center;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 10px #FFFFFF, 0 0 20px #CCCCCC;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#orderUrlSearch:focus, #itemSearch:focus {
+    box-shadow: 0 0 20px #FFFFFF, 0 0 30px #CCCCCC;
+}
+
+/* Botones de búsqueda */
+#searchByUrlButton {
+    margin-top: 10px;
+    padding: 8px 20px;
+    font-size: 14px;
+    color: #FFFFFF; 
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px #FFFFFF, 0 0 30px #CCCCCC;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+#searchByUrlButton:hover {
+    background-color: #FFFFFF;
+    color: #0d0d0d;
+    box-shadow: 0 0 20px #FFFFFF, 0 0 40px #CCCCCC;
+    transform: scale(1.05);
+}
+.custom-search-container {
+    margin-top: 30px;
+}
+
+/* Animación para mostrar los pedidos */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación para ocultar los pedidos */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* Clase para animar la aparición de un pedido */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Clase para animar la desaparición de un pedido */
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+/* Para evitar problemas de visibilidad */
+.pedido {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+
+/* Animación de luces neon */
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 5px #FFFFFF, 0 0 10px #CCCCCC, 0 0 20px #CCCCCC;
+    }
+    to {
+        text-shadow: 0 0 20px #FFFFFF, 0 0 30px #CCCCCC, 0 0 40px #CCCCCC;
+    }
+}
+
+
+/* Animación de resplandor neón */
+@keyframes neon-glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ccc;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ccc, 0 0 40px #ccc;
+    }
+}
+
+
+
+
+h1 {
+    font-size: 60px; 
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); 
+    font-family: 'Arial', sans-serif; 
+    text-align: center; 
+    margin-top: 20px;
+}
+
+
+
+.spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 855px;
+    margin-top: 55px;
+    
+  }
+  
+  .spinner span {
+    position: absolute;
+    top: 50%;
+    left: var(--left);
+    width: 35px;
+    height: 7px;
+    background: #ffff;
+    animation: dominos 1s ease infinite;
+    box-shadow: 2px 2px 3px 0px black;
+  }
+  
+
+.spinner span:nth-child(1) { --left: 80px; animation-delay: 0.125s; }
+.spinner span:nth-child(2) { --left: 70px; animation-delay: 0.3s; }
+.spinner span:nth-child(3) { left: 60px; animation-delay: 0.425s; }
+.spinner span:nth-child(4) { left: 50px; animation-delay: 0.54s; }
+.spinner span:nth-child(5) { left: 40px; animation-delay: 0.665s; }
+.spinner span:nth-child(6) { left: 30px; animation-delay: 0.79s; }
+.spinner span:nth-child(7) { left: 20px; animation-delay: 0.915s; }
+.spinner span:nth-child(8) { left: 10px; }
+
+@keyframes dominos {
+    50% { opacity: 0.7; }
+    75% { transform: rotate(90deg); }
+    80% { opacity: 1; }
+}
+
+/* Desenfoque al contenido */
+#content {
+    transition: filter 0.3s ease;
+}
+
+
+  
+  .spinner span:nth-child(1) {
+    --left: 80px;
+    animation-delay: 0.125s;
+  }
+  
+  .spinner span:nth-child(2) {
+    --left: 70px;
+    animation-delay: 0.3s;
+  }
+  
+  .spinner span:nth-child(3) {
+    left: 60px;
+    animation-delay: 0.425s;
+}
+  
+  .spinner span:nth-child(4) {
+    animation-delay: 0.54s;
+    left: 50px;
+  }
+  
+  .spinner span:nth-child(5) {
+    animation-delay: 0.665s;
+    left: 40px;
+  }
+  
+  .spinner span:nth-child(6) {
+    animation-delay: 0.79s;
+    left: 30px;
+  }
+  
+  .spinner span:nth-child(7) {
+    animation-delay: 0.915s;
+    left: 20px;
+  }
+  
+  .spinner span:nth-child(8) {
+    left: 10px;
+  }
+  
+  @keyframes dominos {
+    50% {
+      opacity: 0.7;
+    }
+  
+    75% {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  
+    80% {
+      opacity: 1;
+    }
+  }
+  .pedido {
+    color: #fff;
+    margin-left: 20px;
+}
+
+.pedido-title {
+    font-size: 30px;
+    margin-top: 80px;
+    margin-left: 205px;
+    text-transform: uppercase;
+}
+
+.pedidoContent {
+    position: relative;
+}
+
+.pedidoTable {
+    border-collapse: collapse;
+    width: 1295px;
+    background-color: white;
+    margin-left: 208px;
+}
+
+.blue-text {
+    color: #0054d5;
+    font-family: 'Verdana', sans-serif;
+    font-size: 15px;
+    display: block; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.pedidoTable td, .pedidoTable th {
+    border: 1.8px solid black;
+    word-wrap: break-word; 
+    white-space: normal; 
+    max-width: 300px; 
+    min-width: 90px; 
+    box-sizing: border-box;
+    padding: 0; 
+    vertical-align: top; 
+    min-height: 340px; 
+}
+
+
+.pedidoTable td {
+    padding-top:  5px; 
+    padding-left: 8.5px; 
+}
+
+
+
+.contenido {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #000000; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 1.2; 
+    height: auto; 
+    overflow: visible; 
+    padding: 0;
+}
+
+
+
+.legal-text {
+    color: black;
+    font-size: 8px;
+    text-align: justify;
+    margin-left: 4px;
+    margin-right: 14px;
+    width: 200px;
+}
+
+.textobajo {
+    color: black;
+    font-size: 10px;
+    margin-top: 36px;
+}
+
+.kovetimage {
+    width: 250px;
+    height: 150px;
+}
+
+.rm {
+    width: 151PX;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    font-family: 'TechnicLite', sans-serif;
+}
+.rm2 {
+    margin-top: 80px;
+    margin-right: 8px;
+}
+
+
+.pdfUpload {
+    position: absolute;
+    top: -50px;
+    margin-left: 1400px;
+}
+
+.savePDFButton {
+    margin-top: 10px;
+}
+
+
+.small-cell {
+    width: 141px; 
+    white-space: normal; 
+}
+
+
+.contenido {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: black; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 600; 
+    line-height: 1; 
+    height: 36.5px; 
+    overflow: hidden; 
+    display: block; 
+   margin-left: 1.2px;
+    text-align: center;
+}
+
+.contenido-description {
+    font-size: 18.2px;
+    text-transform: uppercase;
+    color: black; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 600; 
+    line-height: 1; 
+    height: 80.6px; 
+    overflow: hidden; 
+    display: block; 
+   margin-right: 2px;
+    text-align: center;
+}
+
+.contenido-po {
+    font-size: 18.2px;
+    text-transform: uppercase;
+    color: black; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 600; 
+    line-height: 1; 
+    width: 134px;
+    overflow: hidden; 
+    display: block;
+    text-align: center;
+     /* Evita que el texto se divida en varias líneas */
+}
+
+.contenido-qty {
+    font-size: 18.2px;
+    text-transform: uppercase;
+    color: black; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 600; 
+    line-height: 1; 
+    width: 133.5px;
+    overflow: hidden; 
+    display: block; 
+    margin-left: 1.2px;
+    text-align: center;
+}
+
+.contenido-wo {
+    font-size: 18.2px;
+    text-transform: uppercase;
+    color: black; 
+    margin: 0;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: 600; 
+    line-height: 1; 
+    width: 134.5px;
+    overflow: hidden; 
+    display: block; 
+    margin-left: 1.2px;
+    text-align: center;
+}
+
+.pdfUpload {
+    margin-top: -30px;
+    display: inline-block;
+    margin-left: 1110px;
+    font-size: 16px;
+    padding: 5px 15px;
+    color: #fff; 
+    background-color: transparent; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.pdfUpload:hover {
+    color: white; 
+    box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0.8); 
+}
+
+.pdfUpload:focus {
+    outline: none;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); 
+}
+
+.pdfUpload:active {
+    background-color: #fff; 
+    color: #000;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1); 
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+}
+
+/* Oculta el input file real */
+.pdfUpload::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.pdfUpload::before {
+    content: 'Upload pdf:';
+    display: inline-block;
+    margin-right: -115px;
+    margin-left: 5px;
+    background-color: transparent; 
+    color: white; 
+    padding: 10px 9px;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pdfUpload:hover::before {
+    background-color: #fff; 
+    color: #000; 
+}
+
+.pdfUpload:active::before {
+    background-color: #fff; 
+    color: #000; 
+}
+
+.savePDFButton {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: #fff; 
+    background-color: transparent; 
+    border: 2px solid #fff; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 208px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.savePDFButton:hover {
+    background-color: #fff; 
+    color: #000; 
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); 
+}
+
+.savePDFButton:focus {
+    outline: none;
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); 
+}
+
+/* Animación al hacer clic */
+.savePDFButton:active {
+    background-color: #fff; 
+    color: #000; 
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1);
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, color 0.1s ease;
+}

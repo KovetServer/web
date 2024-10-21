@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --headerBackground: #1b3b2e; /* Verde oscuro similar al color de los árboles */
+    --bodyBackground: #121212; /* Negro suave */
+    --containerBackground: #0b1d15; /* Verde oscuro casi negro para el contenido */
+    --textColor: #ecf0f1; /* Color de texto claro */
+    --highlightBackground: linear-gradient(135deg, #00FF99, #009966); /* Verde metálico degradado */
+    --cardBackground: #0b1d15; /* Fondo de las tarjetas */
+    --ledGlowColor: rgba(0, 255, 153, 0.5); /* Color de brillo LED */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: var(--textColor);
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Resplandor más sutil */
+    font-family: 'Arial', sans-serif; /* Fuente elegante */
+    text-align: center; 
+  
+}
+
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.chart {
+    width: 45%;
+    margin-bottom: 20px;
+    background: black;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 15px #fff;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem #fff;
+}
+
+.chart::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 8px;
+    background: #fff;
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.chart:hover::before {
+    opacity: 1;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    color: var(--highlightBackground);
+    font-weight: 600;
+    margin-bottom: .75rem;
+    text-align: center;
+}
+
+.chart-button {
+    font-family: inherit;
+    display: inline-block;
+    width: 100%;
+    height: 2.6em;
+    line-height: 2.5em;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 10px 0;
+    font-size: 17px;
+    z-index: 1;
+    color: var(--textColor);
+    border: 2px solid var(--textColor);
+    border-radius: 6px;
+    position: relative;
+    background: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.chart-button::before {
+    position: absolute;
+    content: "";
+    background: var(--highlightBackground);
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+    filter: blur(10px);
+}
+
+.chart-button:hover {
+    color: white;
+    transform: scale(1.05);
+}
+
+.chart-button:hover::before {
+    top: -30px;
+    left: -30px;
+}
+
+@media (max-width: 768px) {
+    .chart {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+
+    .chart-button {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+}

@@ -1,0 +1,70 @@
+:root {
+    --headerBackground: #1b3b2e; 
+    --footerBackground: #142923; 
+    --bodyBackground: black; 
+    --contentBackground: black; 
+    --highlightBackground: linear-gradient(135deg, #00FF99, #009966); 
+    --sideMenuBackground: linear-gradient(180deg, #1b3b2e, #142923); 
+    --homeScreen: black; 
+    --settings: #f1c40f; 
+    --comments: black; 
+    --information: #9b59b6; 
+    --pdf:black;
+    --pdf2:black;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+
+.link[rel="icon"] {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+
+#header {
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; 
+    position: relative;
+}
+
+#body {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden; 
+    position: relative;
+}
+
+#sidemenu {
+    width: 400px;
+    background: #fff;
+    position: fixed; 
+    bottom: 0;
+    z-index: 2000; 
+    overflow-y: auto; 
+}
+
+#content {
+    width: 100%; 
+    background: var(--contentBackground);
+    overflow-y: auto; 
+    padding: 20px; 
+    position: relative;
+    z-index: 500; 
+}
